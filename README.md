@@ -1,1 +1,1 @@
-# agrocd
+# AgroCD initial configuration 

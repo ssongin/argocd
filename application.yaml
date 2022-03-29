@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+    name: argo-application
+    namespace: argocd
+spec:
+    project: CICD
+    source:
+        repoURL: git@github.com:ssongin/degrad.solutions.git
+        targetRevision: HEAD
+        path: k8s/argocd
+    destination:
+        server: https://kubernetes.default.svc
+        namespace: argocd
+    syncPolicy:
+        automated:
+            selfHeal: true
+            prune: false
