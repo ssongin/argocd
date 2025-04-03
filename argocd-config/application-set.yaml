@@ -20,6 +20,8 @@ spec:
           - name: convertx
             project: utilities-project
           # - name: crowdsec
+          - name: pihole
+            project: network-project
           # - name: external-dns
           # - name: external-secrets
           # - name: go-healthcheck
