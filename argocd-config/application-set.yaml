@@ -1,0 +1,94 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: applications
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+    - list:
+        elements:
+          # - name: arr-stack
+          # - name: blackbox-exporter
+          #   namespace: monitoring
+          # - name: calibre-web
+          - name: cert-manager
+            project: network-project
+          # - name: cloudnative-pg
+          #   namespace: cnpg-system
+          #   serverSideApply: true
+          # - name: convertx
+          # - name: crowdsec
+          # - name: external-dns
+          # - name: external-secrets
+          # - name: go-healthcheck
+          # - name: home-assistant
+          # - name: homepage
+          # - name: httpbin
+          # - name: immich
+          # - name: it-tools
+          # - name: ingress-nginx
+          # - name: kube-prometheus-stack
+          #   namespace: monitoring
+          #   serverSideApply: true
+          # - name: loki
+          # - name: longhorn
+          #   namespace: longhorn-system
+          #   serverSideApply: true
+          #   serverSideDiff: true
+          # - name: mealie
+          # - name: metallb
+          # - name: mosquitto
+          # - name: nextcloud
+          # - name: oauth2-proxy
+          # - name: opencloud
+          # - name: opentelemetry-collector
+          # - name: opentelemetry-operator
+          # - name: paperless-ngx
+          # - name: reloader
+          # - name: satisfactory-server
+          # - name: snapshot-controller
+          # - name: tailscale-operator
+          # - name: vaultwarden
+          # - name: velero
+          # - name: zigbee2mqtt
+
+  template:
+    metadata:
+      name: "{{ .name }}"
+      annotations:
+        argocd.argoproj.io/manifest-generate-paths: "."
+        notifications.argoproj.io/subscribe.on-sync-succeeded.telegram: "-1001726711150"
+        argocd.argoproj.io/compare-options: '{{ printf "%s=%s" "ServerSideDiff" (dig "serverSideDiff" "false" . | toString) }}'
+    spec:
+      project: '{{ dig "project" "default" . }}'
+      source:
+        repoURL: git@github.com:ssongin/helm_packages.git
+        targetRevision: HEAD
+        path: "k8s-apps/{{ .name }}"
+      destination:
+        name: in-cluster
+        namespace: '{{ default .name (dig "namespace" "" .) }}'
+      ignoreDifferences:
+        - group: apiextensions.k8s.io
+          kind: CustomResourceDefinition
+          jqPathExpressions:
+            - .spec.conversion.webhook.clientConfig.caBundle
+        # FIXME: https://github.com/cloudnative-pg/charts/issues/426
+        - group: postgresql.cnpg.io
+          kind: Cluster
+          jqPathExpressions:
+            - .spec.postgresql.pg_hba
+            - .spec.postgresql.pg_ident
+        - group: apps
+          kind: "*"
+          jqPathExpressions:
+            - .spec.template.spec.hostUsers
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
+          - RespectIgnoreDifferences=true
+          - '{{ printf "%s=%s" "ServerSideApply" (dig "serverSideApply" "false" . | toString) }}'
