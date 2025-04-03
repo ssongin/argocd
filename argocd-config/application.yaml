@@ -22,7 +22,7 @@ metadata:
 spec:
   project: git-helm-repos
   source:
-    repoURL: git@github.com:ssongin/argocd.git
+    repoURL: ssh://git@github.com/ssongin/argocd.git
     path: argocd-config/
     targetRevision: HEAD
   destination:
