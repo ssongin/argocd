@@ -11,7 +11,8 @@ spec:
           # - name: arr-stack
           # - name: blackbox-exporter
           #   namespace: monitoring
-          # - name: calibre-web
+          - name: calibre-web
+            project: media-project
           - name: cert-manager
             project: network-project
           # - name: cloudnative-pg
