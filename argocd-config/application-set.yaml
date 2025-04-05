@@ -36,7 +36,8 @@ spec:
             namespace: monitoring
             project: monitoring-project
           #   serverSideApply: true
-          # - name: loki
+          - name: loki
+            project: monitoring-project
           # - name: longhorn
           #   namespace: longhorn-system
           #   serverSideApply: true
