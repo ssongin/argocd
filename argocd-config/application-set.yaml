@@ -15,8 +15,8 @@ spec:
             project: media-project
           - name: cert-manager
             project: network-project
-          # - name: cloudnative-pg
-          #   namespace: cnpg-system
+          - name: cloudnative-pg
+            project: db-project
           #   serverSideApply: true
           - name: convertx
             project: utilities-project
