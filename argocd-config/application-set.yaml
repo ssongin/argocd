@@ -32,8 +32,9 @@ spec:
           # - name: immich
           # - name: it-tools
           # - name: ingress-nginx
-          # - name: kube-prometheus-stack
-          #   namespace: monitoring
+          - name: kube-prometheus-stack
+            namespace: monitoring
+            project: monitoring-project
           #   serverSideApply: true
           # - name: loki
           # - name: longhorn
