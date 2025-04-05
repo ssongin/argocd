@@ -17,7 +17,7 @@ spec:
             project: network-project
           - name: cloudnative-pg
             project: db-project
-          #   serverSideApply: true
+            serverSideApply: true
           - name: convertx
             project: utilities-project
           # - name: crowdsec
