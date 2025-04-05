@@ -35,7 +35,7 @@ spec:
           - name: kube-prometheus-stack
             namespace: monitoring
             project: monitoring-project
-          #   serverSideApply: true
+            serverSideApply: true
           - name: loki
             project: monitoring-project
           # - name: longhorn
