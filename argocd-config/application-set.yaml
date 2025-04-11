@@ -47,7 +47,8 @@ spec:
           #   serverSideApply: true
           #   serverSideDiff: true
           # - name: mealie
-          # - name: metallb
+          - name: metallb
+            project: network-project
           # - name: mosquitto
           # - name: nextcloud
           # - name: oauth2-proxy
