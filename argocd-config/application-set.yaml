@@ -11,33 +11,35 @@ spec:
           # - name: arr-stack
           # - name: blackbox-exporter
           #   namespace: monitoring
-          - name: calibre-web
-            project: media-project
-          - name: cert-manager
-            project: network-project
-          - name: cloudnative-pg
-            project: db-project
-            serverSideApply: true
-          - name: convertx
-            project: utilities-project
+          # - name: calibre-web
+          #   project: media-project
+          # - name: cert-manager
+          #   project: network-project
+          # - name: cloudnative-pg
+          #   project: db-project
+          #   serverSideApply: true
+          # - name: convertx
+          #   project: utilities-project
           # - name: crowdsec
-          - name: pihole
-            project: network-project
+          # - name: pihole
+          # project: network-project
           # - name: external-dns
-          # - name: external-secrets
+          #   project: system-project
+          - name: external-secrets
+            project: system-project
           # - name: go-healthcheck
           # - name: home-assistant
           # - name: homepage
           # - name: httpbin
           # - name: immich
           # - name: it-tools
-          # - name: ingress-nginx
-          - name: kube-prometheus-stack
-            namespace: monitoring
-            project: monitoring-project
-            serverSideApply: true
-          - name: loki
-            project: monitoring-project
+          # - name: ingres
+          # - name: kube-prometheus-stack
+          #   namespace: monitoring
+          #   project: monitoring-project
+          #   serverSideApply: true
+          # - name: loki
+          #   project: monitoring-project
           # - name: longhorn
           #   namespace: longhorn-system
           #   serverSideApply: true
