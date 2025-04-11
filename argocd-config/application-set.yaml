@@ -21,8 +21,8 @@ spec:
           # - name: convertx
           #   project: utilities-project
           # - name: crowdsec
-          # - name: pihole
-          # project: network-project
+          - name: pihole
+            project: network-project
           # - name: external-dns
           #   project: system-project
           - name: external-secrets
