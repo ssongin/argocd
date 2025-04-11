@@ -13,8 +13,8 @@ spec:
           #   namespace: monitoring
           # - name: calibre-web
           #   project: media-project
-          # - name: cert-manager
-          #   project: network-project
+          - name: cert-manager
+            project: network-project
           # - name: cloudnative-pg
           #   project: db-project
           #   serverSideApply: true
@@ -22,6 +22,8 @@ spec:
           #   project: utilities-project
           # - name: crowdsec
           - name: pihole
+            project: network-project
+          - name: traefik
             project: network-project
           # - name: external-dns
           #   project: system-project
