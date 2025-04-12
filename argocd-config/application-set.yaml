@@ -55,7 +55,8 @@ spec:
           # - name: opencloud
           # - name: opentelemetry-collector
           # - name: opentelemetry-operator
-          # - name: paperless-ngx
+          - name: paperless-ngx
+            project: media-project
           # - name: reloader
           # - name: satisfactory-server
           # - name: snapshot-controller
