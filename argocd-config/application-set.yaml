@@ -57,7 +57,8 @@ spec:
           # - name: opentelemetry-operator
           - name: paperless-ngx
             project: media-project
-          # - name: reloader
+          - name: reloader
+            project: system-project
           # - name: satisfactory-server
           # - name: snapshot-controller
           # - name: tailscale-operator
