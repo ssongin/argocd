@@ -35,7 +35,8 @@ spec:
             project: utilities-project
           # - name: httpbin
           # - name: immich
-          # - name: it-tools
+          - name: it-tools
+            project: utilities-project
           # - name: ingres
           - name: kube-prometheus-stack
             namespace: monitoring
