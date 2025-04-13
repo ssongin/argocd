@@ -18,8 +18,8 @@ spec:
           - name: cloudnative-pg
             project: db-project
             serverSideApply: true
-          # - name: convertx
-          #   project: utilities-project
+          - name: convertx
+            project: utilities-project
           # - name: crowdsec
           - name: pihole
             project: network-project
@@ -31,7 +31,8 @@ spec:
             project: system-project
           # - name: go-healthcheck
           # - name: home-assistant
-          # - name: homepage
+          - name: homepage
+            project: utilities-project
           # - name: httpbin
           # - name: immich
           # - name: it-tools
