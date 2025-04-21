@@ -15,9 +15,9 @@ spec:
             project: media-project
           - name: cert-manager
             project: network-project
-          - name: cloudnative-pg
-            project: db-project
-            serverSideApply: true
+          # - name: cloudnative-pg
+          #   project: db-project
+          #   serverSideApply: true
           - name: convertx
             project: utilities-project
           # - name: crowdsec
@@ -25,8 +25,8 @@ spec:
             project: network-project
           - name: traefik
             project: network-project
-          - name: external-dns
-            project: network-project
+          # - name: external-dns
+          #   project: network-project
           - name: external-secrets
             project: system-project
           # - name: go-healthcheck
