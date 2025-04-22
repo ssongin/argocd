@@ -55,7 +55,8 @@ spec:
             project: network-project
           # - name: mosquitto
           # - name: nextcloud
-          # - name: oauth2-proxy
+          - name: oauth2-proxy
+            project: security-project
           # - name: opencloud
           # - name: opentelemetry-collector
           # - name: opentelemetry-operator
