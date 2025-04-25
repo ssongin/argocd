@@ -15,10 +15,12 @@ spec:
             project: media-project
           - name: cert-manager
             project: network-project
-          # - name: cloudnative-pg
-          #   project: db-project
-          #   serverSideApply: true
+          - name: cloudnative-pg
+            project: db-project
+            serverSideApply: true
           - name: convertx
+            project: utilities-project
+          - name: firefly
             project: utilities-project
           # - name: crowdsec
           - name: pihole
