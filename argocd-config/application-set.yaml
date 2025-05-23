@@ -37,8 +37,8 @@ spec:
             project: utilities-project
           # - name: httpbin
           # - name: immich
-          - name: jellyfin
-            project: media-project
+          # - name: jellyfin
+          # project: media-project
           - name: it-tools
             project: utilities-project
           # - name: ingres
