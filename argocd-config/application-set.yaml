@@ -48,6 +48,8 @@ spec:
             serverSideApply: true
           - name: loki
             project: monitoring-project
+          - name: metrics-server
+            project: monitoring-project
           # - name: longhorn
           #   namespace: longhorn-system
           #   serverSideApply: true
